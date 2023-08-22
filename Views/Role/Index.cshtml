@@ -1,0 +1,46 @@
+﻿@model IEnumerable<TestDemo.Models.RoleViewModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New Role", "AddRole")
+</p>
+
+
+<table class="container">
+    <tr class="row">
+        <th class="col p-3 ">
+            @Html.DisplayNameFor(model => model.RoleId)
+        </th>
+        <th class="col p-3 ">
+            @Html.DisplayNameFor(model => model.RoleName)
+        </th>
+     
+        <th class="col p-3 ">
+            @Html.DisplayName("Available actions")
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr class="row">
+            <td class="col p-3 ">
+                @Html.DisplayFor(modelItem => item.RoleId)
+            </td>
+            <td class="col p-3 ">
+                @Html.DisplayFor(modelItem => item.RoleName)
+            </td>       
+           
+            <td class="col p-3 ">
+                @Html.ActionLink("Edit", "EditRole", new { roleId = item.RoleId }) |                
+                @Html.ActionLink("Delete", "DeleteRole", new { roleId = item.RoleId })
+            </td>
+        </tr>
+    }
+
+</table>
+
+

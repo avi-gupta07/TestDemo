@@ -1,0 +1,39 @@
+﻿@model TestDemo.Models.RoleViewModel
+@{
+    Layout = null;
+}
+
+
+<h2>Delete the Role</h2>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RoleId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoleId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoleName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoleName)
+        </dd>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.RoleId)
+        <div class="form-actions">
+            <input type="submit" value="Delete" class="btn btn-defaut"> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
+
+
+
+
